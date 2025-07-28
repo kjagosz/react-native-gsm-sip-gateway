@@ -3,7 +3,6 @@ workflows:
     name: Build Android APK
     max_build_duration: 30
     environment:
-      # android: true    ← احذف هذا السطر
       node: 18.16.0
       java: 17
     scripts:
@@ -12,7 +11,7 @@ workflows:
           npm install
       - name: Build debug APK
         script: |
-          cd android
+          cd telon-gateway-app/android
           ./gradlew assembleDebug
     artifacts:
-      - android/app/build/outputs/**/*.apk
+      - telon-gateway-app/android/app/build/outputs/**/*.apk
