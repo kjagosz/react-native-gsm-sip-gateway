@@ -1,25 +1,18 @@
-cat > codemagic.yaml << 'EOF'
 workflows:
   build-apk:
-    name: Build APK
+    name: Build Android APK
     max_build_duration: 30
     environment:
       node: 18.16.0
       java: 17
       android: true
-      vars:
-        PACKAGE_NAME: "com.telon.gsmsip"
     scripts:
-      - name: Install Dependencies
+      - name: Install dependencies
         script: |
           npm install
-      - name: Accept Licenses
-        script: |
-          yes | sdkmanager --licenses
-      - name: Build APK
+      - name: Build debug APK
         script: |
           cd android
           ./gradlew assembleDebug
     artifacts:
       - android/app/build/outputs/**/*.apk
-EOF
