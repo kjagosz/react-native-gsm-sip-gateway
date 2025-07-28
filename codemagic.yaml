@@ -8,6 +8,7 @@ workflows:
     scripts:
       - name: Install dependencies
         script: |
+          cd telon-gateway-app
           npm install
       - name: Build debug APK
         script: |
