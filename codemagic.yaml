@@ -1,4 +1,5 @@
 workflows:
+<<<<<<< HEAD
   android-workflow:
     name: Android Workflow
     instance_type: mac_mini_m2
@@ -14,3 +15,22 @@ workflows:
           ./gradlew assembleRelease
     artifacts:
       - android/app/build/outputs/apk/release/app-release.apk
+=======
+  build-apk:
+    name: Build Android APK
+    max_build_duration: 30
+    environment:
+      node: 18.16.0
+      java: 17
+    scripts:
+      - name: Install dependencies
+        script: |
+          cd telon-gateway-app
+          npm install
+      - name: Build debug APK
+        script: |
+          cd telon-gateway-app/android
+          ./gradlew assembleDebug
+    artifacts:
+      - telon-gateway-app/android/app/build/outputs/**/*.apk
+>>>>>>> 6adb67352e84b10e863f1140b7f26cf4c9dcecb2
