@@ -1,5 +1,4 @@
 workflows:
-<<<<<<< HEAD
   android-workflow:
     name: Android Workflow
     instance_type: mac_mini_m2
@@ -15,7 +14,6 @@ workflows:
           ./gradlew assembleRelease
     artifacts:
       - android/app/build/outputs/apk/release/app-release.apk
-=======
   build-apk:
     name: Build Android APK
     max_build_duration: 30
@@ -33,4 +31,3 @@ workflows:
           ./gradlew assembleDebug
     artifacts:
       - telon-gateway-app/android/app/build/outputs/**/*.apk
->>>>>>> 6adb67352e84b10e863f1140b7f26cf4c9dcecb2
