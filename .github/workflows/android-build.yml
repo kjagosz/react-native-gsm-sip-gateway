@@ -2,7 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ main ] # تغيير اسم الفرع إذا كنت تستخدم فرعاً آخر
+    branches: [ main ] 
   pull_request:
     branches: [ main ]
 
